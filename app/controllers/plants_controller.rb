@@ -9,8 +9,12 @@ class PlantsController < ApplicationController
     end
     
     def create
-        byebug
         @plant = Plant.new(plant_params)
+        if @plant.save
+            redirect_to plant_path(@plant)
+        else
+            redirect_to new_plant_path
+        end
         # redirect_to garden_path(@plant.garden)
         #make sure @plant.garden gives its correct garden
     end

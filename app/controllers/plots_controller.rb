@@ -9,7 +9,12 @@ class PlotsController < ApplicationController
 
     def create
         @plot = Plot.new(plot_params)
-        redirect_to garden_plots_path
+        if @plot.save
+            # redirect_to plot_path(@plot)
+            redirect_to garden_plots_path
+        else
+            redirect_to new_plot_path
+        end
     end
     
     private

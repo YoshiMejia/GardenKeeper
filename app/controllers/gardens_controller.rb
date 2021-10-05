@@ -1,17 +1,19 @@
 class GardensController < ApplicationController 
     def new
-        @garden = Garden.new
+        @garden = Garden.new(user_id: session[:user_id])
     end
 
     def create
         @garden = Garden.new(garden_params)
-        redirect_to garden_path(@garden)
+        if @garden.save
+            redirect_to garden_path(@garden)
+        else
+            redirect_to new_garden_path
+        end
     end
 
     def show
-        #check params for whats getting passed in
-        byebug
-        # @garden = Garden.find_by(id: )
+        @garden = Garden.find(params[:id])
     end
 
     def index
@@ -19,6 +21,7 @@ class GardensController < ApplicationController
 
     private
     def garden_params
-        params.require(:garden).permit(:user_id, :address, :plants, :plots)
+        params.require(:garden).permit(:user_id, :address)
     end
-end
+
+end#class ender

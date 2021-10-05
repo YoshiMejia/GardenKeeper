@@ -1,21 +1,9 @@
-<h1>Build your garden! </h1>
+<h1> create garden </h1>
+
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
     <%= f.label :address %>
     <%= f.text_field :address %>
-    <br><br>
-    <%= f.fields_for :plants do |plant| %>
-        <%= plant.label "Plant name" %>
-        <%= plant.text_field :name %>
-        <br><br>
-        <%= plant.label "Plant Description" %>
-        <%= plant.text_field :description %>
-    <% end %>
-    <br><br>
-    <%= f.fields_for :plots do |plot| %>
-        <%= plot.label "type of vegetation" %>
-        <%= plot.text_field :vegetation_type %>
-        <% end %>
     <br><br>
     <%= f.submit "Create Garden" %>
     <% end %>
