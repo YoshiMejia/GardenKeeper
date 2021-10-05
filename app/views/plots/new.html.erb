@@ -1,0 +1,7 @@
+<%= form_for @plot do |f| %>
+    <%= f.hidden_field :user_id %>
+    <%= f.label :vegetation_type %>
+    <%= f.text_field :vegetation_type %>
+    <br><br>
+    <%= f.submit "Create Plot" %>
+    <% end %>

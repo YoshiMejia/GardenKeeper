@@ -1,9 +1,5 @@
-<h1> homepage lol </h1>
-<%= link_to "login", login_path %>
 <br>
-<%= link_to "signup", signup_path %>
-<br>
-<% if  !!session[:user_id] %>
+<% if logged_in? %>
 <%= link_to "logout", logout_path %>
 <br>
 <%= link_to "view gardens", gardens_path %>

@@ -3,19 +3,20 @@ class UsersController < ApplicationController
         @user = User.new
     end
     
+    #users home page
+    def home
+    end
+
     def create
-        # byebug
-        # creates a new user
         @user = User.new(user_params)
-        if @user.password != user_params[:password_confirmation]
-            # redirects you if your password and confirmation don't match
-            redirect_to new_user_path, alert: "Wrong password"
-        else
-            # logs you in
-            # sets your password if the confirmation matches
+        #if youre able to save the user, login and render homepage
+        if @user.save
             session[:user_id] = @user.id
             redirect_to homepage_path
-        end 
+        else
+            #else render login again
+            redirect_to signup_path, alert: "Wrong password, try again"
+        end
     end
 
     private

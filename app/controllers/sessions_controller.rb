@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-    def home
+    #site main page
+    def main
     end
 
     def new
@@ -7,11 +8,13 @@ class SessionsController < ApplicationController
     end
 
     def create
-        byebug
-        @user = User.find_by(name: params[:name])
-        return head(:forbidden) unless @user.authenticate(params[:password])
-        session[:user_id] = @user.id    
-        redirect_to homepage_path
+        @user = User.find_by(email: params[:email])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id    
+            redirect_to homepage_path
+        else
+            redirect_to login_path, alert: "Invalid entry, please try again."
+        end
     end
 
     def destroy
