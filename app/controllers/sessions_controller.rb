@@ -4,5 +4,10 @@ class SessionsController < ApplicationController
     end
 
     def create
+        byebug
+    end
+
+    def destroy
+        #session.delete :user_id ? 
     end
 end
