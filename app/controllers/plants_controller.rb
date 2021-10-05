@@ -5,6 +5,9 @@ class PlantsController < ApplicationController
         #maybe add conditional, so if there is a user_id, then assign to the plant via hidden field.
     end
 
+    def index
+    end
+    
     def create
         byebug
         @plant = Plant.new(plant_params)

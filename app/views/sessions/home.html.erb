@@ -1,0 +1,33 @@
+<h1> homepage lol </h1>
+<%= link_to "login", login_path %>
+<br>
+<%= link_to "signup", signup_path %>
+<br>
+<% if  !!session[:user_id] %>
+<%= link_to "logout", logout_path %>
+<br>
+<%= link_to "view gardens", gardens_path %>
+<br>
+<%= link_to "new garden", new_garden_path %>
+<br>
+<%= link_to "view plants", plants_path %>
+<br>
+<%= link_to "new plant", new_plant_path %>
+<br>
+<%= link_to "view plots", plots_path %>
+<br>
+<%= link_to "new plot", new_plot_path %>
+<br>
+<%= link_to "this users garden", user_gardens_path %>
+<br>
+<%= link_to "new garden for user", new_user_garden_path %>
+<br>
+<%= link_to "plots in this users garden", garden_plots_path %>
+<br>
+<%= link_to "new plot in this users garden", new_garden_plot_path %>
+<br>
+<%= link_to "plants in garden", garden_plants_path %>
+<br>
+<%= link_to "new plant in this users garden", new_garden_plant %>
+<br>
+<% end %>

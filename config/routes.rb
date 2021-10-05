@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  #do i need to erase users_path (users#index) ?
+  root 'sessions#home'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-
   #should i add users/:id/plants? AND/OR users/:id/plots?
   #maybe users homepage should just have links to
   #their plots etc

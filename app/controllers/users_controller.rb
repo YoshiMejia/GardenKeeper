@@ -14,6 +14,7 @@ class UsersController < ApplicationController
             # logs you in
             # sets your password if the confirmation matches
             session[:user_id] = @user.id
+            redirect_to homepage_path
         end 
     end
 

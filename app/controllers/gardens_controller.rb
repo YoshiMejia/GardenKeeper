@@ -11,8 +11,11 @@ class GardensController < ApplicationController
         #check params for whats getting passed in
     end
 
+    def index
+    end
+
     private
     def garden_params
-        
+
     end
 end
