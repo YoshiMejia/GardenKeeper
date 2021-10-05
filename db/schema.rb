@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_000949) do
   end
 
   create_table "plots", force: :cascade do |t|
-    t.string "type"
+    t.string "vegetation_type"
     t.integer "plant_id"
     t.integer "user_id"
     t.integer "garden_id"
