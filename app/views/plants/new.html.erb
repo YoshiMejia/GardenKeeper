@@ -1,0 +1,10 @@
+<h1> Create new plant! </h1>
+<%= form_for @plant do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br><br>
+    <%= f.submit "Create Plant" %>
+    <% end %>
