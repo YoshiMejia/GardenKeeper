@@ -1,4 +1,6 @@
 class Garden < ApplicationRecord
     belongs_to :user
-    belongs_to :plant 
+    has_many :plants
+    has_many :plots
+    has_many :plants, through: :plots
 end
