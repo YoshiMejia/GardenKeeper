@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   #their plots etc
 
 
-  resources :users, :gardens, :plants, :plots, only: [:new, :index, :create]
+  resources :users, :gardens, :plants, :plots, only: [:new, :index, :create, :show]
   #users/id:/gardens...
   resources :users, only: [:show, :index] do
     resources :gardens, only: [:new, :index, :create]
