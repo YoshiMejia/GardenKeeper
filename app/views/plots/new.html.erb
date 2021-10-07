@@ -3,5 +3,17 @@
     <%= f.label :vegetation_type %>
     <%= f.text_field :vegetation_type %>
     <br><br>
+    <p> Select from an exisiting garden: </p><br>
+    <%= f.collection_select :garden_id, Garden.all, :id, :address %>
+    <br>
+    <p>Or, create a new garden! </p>
+    <br>
+    <% byebug %>
+    <%= f.fields_for :garden, @plot.garden.build do |garden_fields| %>
+        <%= garden_fields.label "Address" %>
+        <%= garden_fields.text_field :address %>
+        <% end %>
+
+    <br><br>
     <%= f.submit "Create Plot" %>
     <% end %>

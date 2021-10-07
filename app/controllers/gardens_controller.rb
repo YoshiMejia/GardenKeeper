@@ -4,6 +4,7 @@ class GardensController < ApplicationController
     end
 
     def create
+        byebug
         @garden = Garden.new(garden_params)
         if @garden.save
             redirect_to garden_path(@garden)
@@ -21,7 +22,7 @@ class GardensController < ApplicationController
 
     private
     def garden_params
-        params.require(:garden).permit(:user_id, :address)
+        params.require(:garden).permit(:user_id, :address, plants_attributes: [:name, :description], plots_attributes: [:vegetation_type])    
     end
 
 end#class ender

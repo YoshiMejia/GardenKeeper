@@ -8,6 +8,7 @@ class PlotsController < ApplicationController
     end
 
     def create
+        # it'd prob work best to just have user immediately create plot when creating the garden
         byebug
 #         #(byebug) @plot = Plot.new(plot_params)
 # #<Plot id: nil, vegetation_type: "sada", plant_id: nil, user_id: nil, garden_id: nil, created_at: nil, updated_at: nil>
@@ -37,6 +38,7 @@ class PlotsController < ApplicationController
     private
 
     def plot_params
-        params.require(:plot).permit(:user_id, :vegetation_type)
+        byebug
+        params.require(:plot).permit(:user_id, :vegetation_type)        
     end
 end
