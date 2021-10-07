@@ -4,7 +4,7 @@ class PlotsController < ApplicationController
     # belongs_to :garden
     
     def new
-        @plot = Plot.new
+        @plot = Plot.new(user_id: session[:user_id])
     end
 
     def create
@@ -14,6 +14,7 @@ class PlotsController < ApplicationController
 # (byebug) @plot.save!
 # *** ActiveRecord::RecordInvalid Exception: Validation failed: Plant must exist, User must exist, Garden must exist
 # figure out way to carry over ID's so that plot can save to DB
+
 
         @plot = Plot.new(plot_params)
         if @plot.save
