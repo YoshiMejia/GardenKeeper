@@ -17,6 +17,7 @@ class GardensController < ApplicationController
     end
 
     def index
+        @garden = Garden.where(user_id: params[:user_id])
     end
 
     private
