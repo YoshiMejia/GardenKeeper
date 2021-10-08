@@ -22,7 +22,7 @@ class GardensController < ApplicationController
 
     private
     def garden_params
-        params.require(:garden).permit(:user_id, :address, plants_attributes: [:name, :description], plots_attributes: [:vegetation_type])    
+        params.require(:garden).permit(:user_id, :address, plants_attributes: [:name, :description])    
     end
 
 end#class ender

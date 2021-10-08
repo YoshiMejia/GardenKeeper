@@ -15,23 +15,16 @@ Rails.application.routes.draw do
   #should i add users/:id/plants? AND/OR users/:id/plots?
   #maybe users homepage should just have links to
   #their plots etc
-
-
-  resources :users, :gardens, :plants, :plots, only: [:new, :index, :create, :show]
+  resources :users, :gardens, :plants, only: [:new, :index, :create, :show]
   #users/id:/gardens...
   resources :users, only: [:show, :index] do
     resources :gardens, only: [:new, :index, :create]
   end
 
-  #gardens/id:/plots...
-  resources :gardens, only: [:show, :index] do
-    resources :plots, only: [:new, :index, :create]
-  end
-
 #gardens/id:/plants
-  resources :gardens, only: [:show, :index] do 
-    resources :plants, only: [:new, :index, :create]
-  end
+  # resources :gardens, only: [:show, :index] do 
+  #   resources :plants, only: [:new, :index, :create]
+  # end
 
 
 end#ender

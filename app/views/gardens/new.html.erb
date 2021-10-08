@@ -4,21 +4,6 @@
     <%= f.hidden_field :user_id %>
     <%= f.label :address %>
     <%= f.text_field :address %>
-    <br><br>
-    <%= f.fields_for :plants, @garden.plants.build do |plant_fields| %>
-        <%= plant_fields.label "Plant name" %>
-        <%= plant_fields.text_field :name %>
-        <br><br>
-        <%= plant_fields.label "Plant Description" %>
-        <%= plant_fields.text_field :description %>
-    <% end %>
-    <br><br>
-    <p>What kind of vegetation are you putting in the garden?</p>
-    <%= f.fields_for :plots, @garden.plots.build do |plot_fields| %>
-        <%= plot_fields.label "type of vegetation" %>
-        <%= plot_fields.text_field :vegetation_type %>
-        <% end %>
-        <br><br>
     <%= f.submit "Create Garden" %>
     <% end %>
 
