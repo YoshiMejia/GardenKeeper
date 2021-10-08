@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   resources :users, :gardens, :plants, only: [:new, :index, :create, :show]
 
   resources :users, only: [:show, :index] do
-    resources :gardens, only: [:new, :index, :create, :show]
+    resources :gardens
   end
 
-  resources :users, only: [:show, :index] do
-    resources :plants
-  end
+  # resources :users, only: [:show, :index] do
+  #   resources :plants
+  # end
 
 
 end#ender

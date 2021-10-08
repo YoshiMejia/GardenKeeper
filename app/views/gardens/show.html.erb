@@ -1,13 +1,10 @@
 <h1> garden show page </h1>
 <h3>Address: <%= @garden.address %></h3>
 
-<h5> You currently have a <%= link_to @garden.plant.name, plant_path(@garden.plant) %> plant in this garden! </h5>
+<h5> You currently have a <%= @garden.plant.name.singularize %> plant in this garden! </h5>
 <h4> <%= @garden.plant.description %> </h4>
 <br><br>
 <%= link_to "View all your gardens", user_gardens_path(current_user) %>
+<br><br>
+<%= button_to "Delete this garden", user_garden_path(current_user, @garden), method: :delete %><br><br>
 
-
-<% if current_user.plants.nil? %>
-    <h3>You don't currently have any plants! Add plants to your garden!</h3>
-    <%= link_to "add plant", new_plant_path %>
-<% end %>

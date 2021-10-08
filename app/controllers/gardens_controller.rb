@@ -21,6 +21,11 @@ class GardensController < ApplicationController
         @garden = Garden.where(user_id: params[:user_id])
     end
 
+    def destroy
+        Garden.find(params[:id]).destroy
+        redirect_to user_gardens_path(current_user)
+    end
+
     private
     def garden_params
         params.require(:garden).permit(:user_id, :address, plant_attributes: [:name, :description])

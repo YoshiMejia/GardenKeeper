@@ -1,15 +1,20 @@
 <h1> create garden </h1>
-
+<br><br>
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
+    <strong>What kind of plant is in your garden? </strong>
+    <br><br>
         <%= f.fields_for :plant do |p| %>
             <%= p.label :name %>
             <%= p.text_field :name %>
+            <br><br>
             <%= p.label :description %>
             <%= p.text_field :description %>
         <% end %>
+        <br><br><strong>Where is your garden located?</strong><br><br>
     <%= f.label :address %>
     <%= f.text_field :address %>
+    <br><br>
     <%= f.submit "Create Garden" %>
     <% end %>
 
