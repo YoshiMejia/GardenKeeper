@@ -2,6 +2,7 @@
 
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
+    <%= f.collection_select :plant_id, Plant.all, :id, :name %>
     <%= f.label :address %>
     <%= f.text_field :address %>
     <%= f.submit "Create Garden" %>
