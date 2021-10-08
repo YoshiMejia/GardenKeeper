@@ -1,1 +1,9 @@
-<h1> gardens index </h1>
+<h1> gardens index </h1> <%= link_to "add new garden", new_user_garden_path %>
+<br><br>
+<% @garden.each do |g| %>
+<h2>Address: <%= g.address %></h2>
+<h5><%= g.plant.name %> </h5>
+<h5><%= g.plant.description %> </h5>
+<br>
+    <% end %>
+
