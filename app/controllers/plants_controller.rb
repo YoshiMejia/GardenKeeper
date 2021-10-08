@@ -14,7 +14,8 @@ class PlantsController < ApplicationController
     def create
         @plant = Plant.new(plant_params)
         if @plant.save
-            redirect_to plant_path(@plant)
+            @plant.users << current_user
+            redirect_to user_plant_path(current_user, @plant)
         else
             redirect_to new_plant_path
         end
@@ -22,6 +23,6 @@ class PlantsController < ApplicationController
 
     private
     def plant_params
-        params.require(:plant).permit(:user_id, :name, :description)
+        params.require(:plant).permit(:name, :description)
     end
 end
