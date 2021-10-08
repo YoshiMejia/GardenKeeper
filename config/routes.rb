@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :users, :gardens, :plants, only: [:new, :index, :create, :show]
   #users/id:/gardens...
   resources :users, only: [:show, :index] do
-    resources :gardens, only: [:new, :index, :create]
+    resources :gardens, only: [:new, :index, :create, :show]
   end
   resources :users, only: [:show, :index] do
     resources :plants, only: [:new, :index, :create, :show]
