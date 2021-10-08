@@ -4,7 +4,6 @@ class GardensController < ApplicationController
     end
 
     def create
-        byebug
         @garden = Garden.new(garden_params)
         if @garden.save
             redirect_to garden_path(@garden)
