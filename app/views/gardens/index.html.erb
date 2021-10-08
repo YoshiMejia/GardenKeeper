@@ -2,8 +2,9 @@
 <br><br>
 <% @garden.each do |g| %>
 <h2>Address: <%= g.address %></h2>
-<h5><%= g.plant.name %> </h5>
+<h5><%= link_to g.plant.name, user_plant_path(current_user, g.plant) %> </h5>
 <h5><%= g.plant.description %> </h5>
 <br>
+
     <% end %>
 

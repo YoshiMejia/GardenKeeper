@@ -3,4 +3,6 @@
 <br>
 <%= link_to "signup", signup_path %>
 <br>
+<% if logged_in? %>
 <%= link_to "homepage", homepage_path %>
+<% end %>

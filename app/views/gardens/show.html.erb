@@ -1,8 +1,10 @@
 <h1> garden show page </h1>
-<%= @garden.address %>
+<h3>Address: <%= @garden.address %></h3>
 
 <h5> You currently have a <%= link_to @garden.plant.name, plant_path(@garden.plant) %> plant in this garden! </h5>
-<p> <%= @garden.plant.description %> </p>
+<h4> <%= @garden.plant.description %> </h4>
+<br><br>
+<%= link_to "View all your gardens", user_gardens_path(current_user) %>
 
 
 <% if current_user.plants.nil? %>

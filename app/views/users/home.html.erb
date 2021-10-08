@@ -2,8 +2,8 @@
 
 <p>  Welcome to GardenKeeper! </p>
 <% if current_user.gardens.empty? %>
-<p> Please add a plant to get started. </p>
-<%= link_to "add plant", new_user_plant_path(current_user) %>
+<p> Please create a garden to get started. </p>
+<%= link_to "create garden", new_user_garden_path(current_user) %>
 <% else %>
 <%= link_to "view my gardens", user_gardens_path(current_user) %>
 <br><br><p>Add new plants to your garden!</p>

@@ -12,7 +12,7 @@ class PlantsController < ApplicationController
     end
 
     def create
-        @plant = Plant.new(plant_params)
+        @plant = Plant.find_or_create_by(plant_params)
         if @plant.save
             @plant.users << current_user
             redirect_to user_plant_path(current_user, @plant)
@@ -21,6 +21,11 @@ class PlantsController < ApplicationController
         end
     end
 
+    def destroy
+        Plant.find(params[:id]).destroy
+
+    end
+    
     private
     def plant_params
         params.require(:plant).permit(:name, :description)
