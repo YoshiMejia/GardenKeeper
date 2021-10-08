@@ -1,3 +1,8 @@
 <h1> plant show page </h1>
 <h2><%= @plant.name %></h2>
 <h4><%= @plant.description %></h4>
+
+<br><br>
+
+<p> Add your plant to a garden! </p>
+<%= link_to 'create garden', new_garden_path %>

@@ -1,6 +1,5 @@
 <h1> user main page </h1>
 
-<%= link_to "add garden", new_garden_path %>
-<br>
-<%= link_to "add plant", new_plant_path %>
+<p>  Welcome to GardenKeeper! Please add a plant to get started. </p>
+<%= link_to "add plant", new_user_plant_path(current_user) %>
 <br>

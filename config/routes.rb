@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index] do
     resources :gardens, only: [:new, :index, :create]
   end
+  resources :users, only: [:show, :index] do
+    resources :plants, only: [:new, :index, :create, :show]
+  end
+
+
 
 #gardens/id:/plants
   # resources :gardens, only: [:show, :index] do 
