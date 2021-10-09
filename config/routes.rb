@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
+  #check if post signup is being used
 
   get '/user/home', to: 'users#home', as: 'homepage'
 
