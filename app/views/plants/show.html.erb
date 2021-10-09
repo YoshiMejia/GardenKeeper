@@ -12,7 +12,7 @@
     <% unless user == current_user %>
        <p> <%= user.name %> also has this plant! </p>
         <br>
+        <% end %>
+        <% end %>
         <p> <%= link_to "View all plants", plants_path %></p>
-    <% end %>
-    <% end %>
 </div>
