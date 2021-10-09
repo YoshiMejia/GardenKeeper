@@ -10,7 +10,7 @@
 <div class="sidebar">
  <% @plant.users.each do |user| %>
     <% unless user == current_user %>
-       <p> <%= user.name %> also has this plant! </p>
+       <p> <%= user.name %> owns this plant! </p>
         <br>
         <% end %>
         <% end %>
