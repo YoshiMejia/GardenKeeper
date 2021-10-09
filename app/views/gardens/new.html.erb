@@ -1,5 +1,4 @@
 <h1> create garden </h1>
-<br><br>
 
 <% if @garden.errors.any? %>
   <div id="error_explanation">
@@ -11,26 +10,23 @@
     </ul>
   </div>
 <% end %>
-<br><br>
 
 
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
 
-    <strong>What kind of plant is in your garden? </strong>
-    <br><br>
-
-    <%= f.fields_for :plant do |p| %>
     
-
-<% if !@garden.errors.include?("plant.name") %>
-    <div class="field">
-<% else %>
-    <div class=".field_with_errors">
-<% end %>
+    <%= f.fields_for :plant do |p| %>
+        
+        <p>What kind of plant is in your garden? </p>
+        
+        <% if !@garden.errors.include?("plant.name") %>
+        <div class="field">
+        <% else %>
+        <div class=".field_with_errors">
+        <% end %>
             <%= p.label :name %>
             <%= p.text_field :name %>
-            <br><br>
 </div>
 
 <% if !@garden.errors.include?("plant.description") %>
@@ -42,8 +38,14 @@
             <%= p.text_field :description %>
         <% end %>
 </div>
+<br>
+<p> Or, maybe this kind of plant is already in our system! </p>
+<div>
+<%= f.collection_select :plant_id, Plant.all, :id, :name %>
+</div>
+<br>
 
-    <br><br><strong>Where is your garden located?</strong><br><br>
+    <p>Where is your garden located?</p>
    
 <% if !@garden.errors.include?("address") %>
     <div class="field">
@@ -52,7 +54,6 @@
 <% end %>
         <%= f.label :address %>
     <%= f.text_field :address %>
-    <br><br>
 </div>
 
     <%= f.submit "Create Garden" %>
