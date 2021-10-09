@@ -1,6 +1,6 @@
 class GardensController < ApplicationController 
     def new
-        @garden = Garden.new(user_id: session[:user_id])
+        @garden = Garden.new(user_id: current_user.id)
         @garden.build_plant
     end
 
