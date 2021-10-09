@@ -1,10 +1,17 @@
-<h1> gardens index </h1> <%= link_to "add new garden", new_user_garden_path %>
+<h1> All Gardens </h1>
+<%= link_to "add new garden", new_user_garden_path(current_user) %>
 <br><br>
-<% @garden.each do |g| %>
-<h2>Address: <%= link_to g.address, user_garden_path(current_user, g) %></h2>
-<h5>Plant name: <%= link_to g.plant.name, plant_path(g.plant) %> </h5>
-<h5>Description: <%= g.plant.description %> </h5>
+
+
+<% @gardens.each do |g| %>
+    <h2>Address: <%= link_to g.address, user_garden_path(current_user, g) %></h2>
+    <% if g.user != current_user %>
+        <p><%= g.user.name %> owns this plant.</p>
+    <% end %>
+<p>Plant name: <%= link_to g.plant.name, plant_path(g.plant) %> </p>
+<p>Description: <%= g.plant.description %> </p>
 <br>
 
     <% end %>
+
 
