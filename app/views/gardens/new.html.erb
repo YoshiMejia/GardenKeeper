@@ -40,8 +40,8 @@
 </div>
 <br>
 <p> Or, maybe this kind of plant is already in our system! </p>
-<div>
-<%= f.collection_select :plant_id, Plant.all, :id, :name %>
+<div> 
+<%= f.collection_select :plant_id, other_plants, :id, :name %>
 </div>
 <br>
 
