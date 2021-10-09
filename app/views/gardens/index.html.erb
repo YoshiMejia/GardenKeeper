@@ -1,4 +1,9 @@
+
+<% if nested_route? %>
+<h1> Hey, <%= current_user.name %>! Here are your gardens.</h1>
+<% else %>
 <h1> All Gardens </h1>
+<% end %>
 <%= link_to "add new garden", new_user_garden_path(current_user) %>
 <br><br>
 
