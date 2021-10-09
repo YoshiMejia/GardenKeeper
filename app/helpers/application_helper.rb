@@ -10,7 +10,16 @@ module ApplicationHelper
     def nested_route?
         !!params[:user_id]
     end
-
+    
+    #helper to see other users plants aka Plant.all without current users plants
+    #to be used in the gardens/new collection
+    def other_plants
+     plants = current_user.plants
+        plants.map do |p|
+        @other_plants = Plant.where.not(name: p.name)
+    end
+    @other_plants
+    end
 
     # def no_data?
     #     @user = User.find_by(id: session[:user_id])
