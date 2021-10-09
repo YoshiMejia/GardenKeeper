@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id    
             redirect_to homepage_path
         else
-            redirect_to login_path, alert: "Invalid entry, please try again."
+            flash[:error] = "Invalid entry, please try again."
+            redirect_to login_path
         end
     end
 
