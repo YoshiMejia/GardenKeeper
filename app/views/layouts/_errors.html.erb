@@ -1,0 +1,13 @@
+<%= render partial: '/layouts/errors', locals: {object_name: @garden} %>
+
+<% if object_name.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(object_name.errors.count, "error") %> prohibited this garden from being saved:</h2>
+
+    <ul>
+    <% object_name.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

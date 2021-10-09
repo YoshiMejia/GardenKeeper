@@ -1,20 +1,60 @@
 <h1> create garden </h1>
 <br><br>
+
+<% if @garden.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@garden.errors.count, "error") %> prohibited this garden from being saved:</h2>
+    <ul>
+    <% @garden.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<br><br>
+
+
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
+
     <strong>What kind of plant is in your garden? </strong>
     <br><br>
-        <%= f.fields_for :plant do |p| %>
+
+    <%= f.fields_for :plant do |p| %>
+    
+
+<% if !@garden.errors.include?("plant.name") %>
+    <div class="field">
+<% else %>
+    <div class=".field_with_errors">
+<% end %>
             <%= p.label :name %>
             <%= p.text_field :name %>
             <br><br>
+</div>
+
+<% if !@garden.errors.include?("plant.description") %>
+    <div class="field">
+<% else %>
+    <div class=".field_with_errors">
+<% end %>
             <%= p.label :description %>
             <%= p.text_field :description %>
         <% end %>
-        <br><br><strong>Where is your garden located?</strong><br><br>
-    <%= f.label :address %>
+</div>
+
+    <br><br><strong>Where is your garden located?</strong><br><br>
+   
+<% if !@garden.errors.include?("address") %>
+    <div class="field">
+<% else %>
+    <div class=".field_with_errors">
+<% end %>
+        <%= f.label :address %>
     <%= f.text_field :address %>
     <br><br>
+</div>
+
     <%= f.submit "Create Garden" %>
     <% end %>
 

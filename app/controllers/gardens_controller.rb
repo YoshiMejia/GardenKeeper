@@ -9,7 +9,7 @@ class GardensController < ApplicationController
         if @garden.save
             redirect_to user_garden_path(@garden.user, @garden)
         else
-            redirect_to new_garden_path
+            render :new
         end
     end
 

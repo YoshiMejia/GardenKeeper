@@ -17,7 +17,7 @@ class PlantsController < ApplicationController
             @plant.users << current_user
             redirect_to user_plant_path(current_user, @plant)
         else
-            redirect_to new_plant_path
+            render :new
         end
     end
 

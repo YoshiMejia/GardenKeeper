@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     
     #users home page
     def home
+        redirect_to login_path if !current_user
     end
 
     def create
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
             redirect_to homepage_path
         else
             #else render login again
-            redirect_to signup_path, alert: "Wrong password, try again"
+            render :new, alert: "Wrong password, try again"
         end
     end
 
