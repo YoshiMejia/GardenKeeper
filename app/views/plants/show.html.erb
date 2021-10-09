@@ -1,6 +1,18 @@
-<h1> plant show page </h1>
-<h2><%= @plant.name %></h2>
-<h4><%= @plant.description %></h4>
+<div>
+<h1> <%= @plant.name %> page </h1>
+</div>
 
-<p> Add your plant to a garden! </p>
-<%= link_to 'create garden', new_user_garden_path(current_user) %>
+
+<div>
+<h4> Description: <%= @plant.description %></h4>
+</div>
+
+<div>
+<h1> <% @plant.users.each do |user| %>
+    <% unless user == current_user %>
+       <p> <%= user.name %> also has this plant! </p>
+        <br>
+    <% end %>
+    <% end %>
+    </h1>
+</div>
