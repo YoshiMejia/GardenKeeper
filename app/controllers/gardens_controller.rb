@@ -28,7 +28,6 @@ class GardensController < ApplicationController
 
     private
     def garden_params
-        byebug
         params.require(:garden).permit(:user_id, :address, :plant_id, plant_attributes: [:name, :description])
     end
 
