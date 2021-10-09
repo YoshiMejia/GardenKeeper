@@ -19,7 +19,11 @@ class GardensController < ApplicationController
     end
 
     def index
-        @garden = Garden.where(user_id: params[:user_id])
+        if params[:user_id]
+            @gardens = Garden.where(user_id: params[:user_id])
+        else
+            @gardens = Garden.all.where.not(user_id: current_user.id)
+        end
     end
 
     def destroy
