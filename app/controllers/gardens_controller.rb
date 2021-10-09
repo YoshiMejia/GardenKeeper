@@ -9,6 +9,7 @@ class GardensController < ApplicationController
         if @garden.save
             redirect_to user_garden_path(@garden.user, @garden)
         else
+            #            flash[:error] = "Invalid entry, please try again."
             render :new
         end
     end

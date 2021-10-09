@@ -1,11 +1,29 @@
+<br>
+<h2> Create GardenKeeper Account</h2>
+<br>
+<%= flash[:alert] %>
+<br>
 <%= form_for @user do |f| %>
+<div>
     <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
-    <%= f.label :email %>
-    <%= f.email_field :email %><br><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br><br>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %><br><br>
+    <%= f.text_field :name %>
+    </div>
+    <br>
+<div>
+<%= f.label :email %>
+<%= f.email_field :email %>
+</div>
+<br>
+<div>
+<%= f.label :password %>
+<%= f.password_field :password %>
+</div>
+<br>
+<div>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+</div>
+<br>
+
     <%= f.submit "Create Account" %>
     <% end %>

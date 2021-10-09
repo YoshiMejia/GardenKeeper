@@ -16,7 +16,8 @@ class UsersController < ApplicationController
             redirect_to homepage_path
         else
             #else render login again
-            render :new, alert: "Wrong password, try again"
+            flash[:alert] = "Invalid entry, please try again."
+            render :new
         end
     end
 
