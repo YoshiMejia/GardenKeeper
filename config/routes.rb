@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   #check if post signup is being used
 
   get '/user/home', to: 'users#home', as: 'homepage'
+  get '/gardens/busybee', to: 'gardens#busybee', as: 'busybee'
 
   resources :users, :gardens, :plants, only: [:new, :index, :create, :show]
 
