@@ -17,6 +17,10 @@ class GardensController < ApplicationController
         @garden = Garden.find(params[:id])
     end
 
+    def busybee
+        @busy_bee = Garden.busy_bee
+    end 
+
     def index
         if params[:user_id]
             @gardens = Garden.where(user_id: params[:user_id])
