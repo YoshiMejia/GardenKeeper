@@ -5,6 +5,7 @@
 <h3>Name: <%= link_to p.name, plant_path(p) %></h3>
 <h5>Description: <%= p.description %> </h5>
 <p> This plant has <%= pluralize(p.users.count, "user") %></p>
+
 <hr />
     <% end %>
 </div>
