@@ -10,48 +10,36 @@
     </ul>
   </div>
 <% end %>
+
 <br><br>
 
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
-
-    
     <%= f.fields_for :plant do |p| %>
-        
         <p>What kind of plant is in your garden? </p>
         
-        <% if !@garden.errors.include?("plant.name") %>
-        <div class="field">
-        <% else %>
-        <div class=".field_with_errors">
-        <% end %>
+       <div>
             <%= p.label :name %>
             <%= p.text_field :name %>
-</div>
+        </div>
 
-<% if !@garden.errors.include?("plant.description") %>
-    <div class="field">
-<% else %>
-    <div class=".field_with_errors">
-<% end %>
+<div>
             <%= p.label :description %>
             <%= p.text_area :description %>
         <% end %>
 </div>
+
 <br>
 <p> Or, maybe this kind of plant is already in our system! </p>
+
 <div> 
 <%= f.collection_select :plant_id, other_plants.sort_names, :id, :name, include_blank: 'Select existing plant' %>
-</div>
 <br>
+</div>
 
     <p>Where is your garden located?</p>
    
-<% if !@garden.errors.include?("address") %>
-    <div class="field">
-<% else %>
-    <div class=".field_with_errors">
-<% end %>
+<div>
         <%= f.label :address %>
     <%= f.text_field :address %>
 </div>
