@@ -18,7 +18,7 @@ module ApplicationHelper
         plants.map do |p|
         @other_plants = Plant.where.not(name: p.name)
     end
-    @other_plants
+    @other_plants ||= Plant.all
     end
 
     # def no_data?
