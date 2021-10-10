@@ -1,4 +1,4 @@
-<h1>  Welcome to GardenKeeper, <%= current_user.name.capitalize %>! </h1>
+<h1>  Welcome to your GardenKeeper homepage, <%= current_user.name.capitalize %>! </h1>
 <br><br>
 
 <% if current_user.gardens.empty? %>
@@ -10,4 +10,5 @@
 || <%= link_to "add new garden", new_user_garden_path(current_user) %>
 <% end %> 
 || <%= link_to "view all gardens", gardens_path %>
+|| <%= link_to "view all plants", plants_path %>
 <br>
