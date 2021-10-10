@@ -21,6 +21,9 @@ class PlantsController < ApplicationController
         end
     end
 
+    def celebrity
+        @celebrity = Plant.celebrity
+    end
 #     def destroy
 # #<%= button_to "Delete plant", user_plant_path(current_user, @plant), method: :delete %><br><br>
 #         Plant.find(params[:id]).destroy
