@@ -1,9 +1,9 @@
-<h1> garden show page </h1>
-<h3>Address: <%= @garden.address %></h3>
+<h1> <%= @garden.address %>'s garden spotlight </h1>
+
 <h5>  This garden holds a <%= link_to @garden.plant.name.singularize, plant_path(@garden.plant) %> plant! </h5>
 <h4> Description: <%= @garden.plant.description %> </h4>
 <%= display_owner(@garden.user) %>
 <br><br>
 <%= link_to "View all your gardens", user_gardens_path(current_user) %>
 <br><br>
-<%= button_to "Delete this garden", user_garden_path(current_user, @garden), method: :delete %><br><br>
+<%= delete_button(@garden) %>
