@@ -10,28 +10,13 @@ module ApplicationHelper
     def nested_route?
         !!params[:user_id]
     end
-    
-    #helper to see other users plants aka Plant.all without current users plants
-    #to be used in the gardens/new collection
-    def other_plants
-     plants = current_user.plants
-        plants.map do |p|
-        @other_plants = Plant.where.not(name: p.name)
-    end
-    @other_plants ||= Plant.all
-    end
 
-    def index_header
-        if !!params[:user_id]
-            content_tag(:h1, "Hey, #{current_user.name}! Here are your gardens.")
-        else
-            content_tag(:h1, "All Gardens")
-        end
-    end
-    
-    def display_owner(user)
-         if user != current_user 
-            content_tag(:p, "#{user.name} owns this plant.")
-        end 
+    def display_links
+        (link_to "all gardens", gardens_path) + " || " +
+        (link_to "all plants", plants_path) + " || " +
+        (link_to "add garden", new_user_garden_path(current_user)) + " || " +
+        (link_to "my gardens", user_gardens_path(current_user)) +
+        content_tag(:br)
+
     end
 end
