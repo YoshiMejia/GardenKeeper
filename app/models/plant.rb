@@ -4,12 +4,10 @@ class Plant < ApplicationRecord
     validates :name, :description, presence: true
     validates_uniqueness_of :name, :case_sensitive => false
     
+    scope :celebrity, -> {joins(:gardens).group(:id).having('COUNT(plant_id)>=1').order('COUNT(user_id) desc')}
+
     def self.sort_names
         order(:name)
-    end
-
-    def self.celebrity
-        joins(:gardens).group(:id).having('COUNT(plant_id)>=1').order('COUNT(user_id) desc')
     end
 
 end
