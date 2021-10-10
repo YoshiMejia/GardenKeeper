@@ -5,4 +5,8 @@ class Garden < ApplicationRecord
     validates :plant, uniqueness: {scope: :address, message: "error: You already have this plant saved at this address!" }
     accepts_nested_attributes_for :plant, reject_if: proc { |attributes| attributes['name'].blank? }
     
+    def self.busy_bee
+        joins(:user).group(:id).order('avg(user_id) desc')
+    end
+
 end
