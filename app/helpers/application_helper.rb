@@ -11,6 +11,15 @@ module ApplicationHelper
         !!params[:user_id]
     end
 
+    def redirect_if_not_logged_in
+        flash[:error] = "You have to login to view that page!"
+        redirect_to login_path if !logged_in?
+    end
+    
+    def display_flash
+        flash[:error] if !logged_in?
+    end
+    
     def display_links
         (link_to "all gardens", gardens_path) + " || " +
         (link_to "all plants", plants_path) + " || " +
