@@ -16,7 +16,9 @@
 <p>Plant name: <%= link_to g.plant.name, plant_path(g.plant) %> </p>
 <p>Description: <%= g.plant.description %> </p>
 <br>
-
     <% end %>
 
+    <div class="sidebar">
+        <i>Would you like to see GardenKeepers <%= link_to 'busy-bee showcase?', busybee_path %></i>
+    </div>
 
