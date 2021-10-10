@@ -1,20 +1,21 @@
 
 <%= index_header %>
 <%= link_to "add new garden", new_user_garden_path(current_user) %>
-<br><br>
+<div align="right">
+<h4> Check out our plant-celebrity lineup!</h4>
+<%= link_to "GardenKeeper's Celebrity Showcase", celebrity_path %>
+</div>
 
 
 <% @gardens.each do |g| %>
-    <h2>Address: <%= link_to g.address, user_garden_path(current_user, g) %></h2>
-    <% if g.user != current_user %>
-        <p><%= g.user.name %> owns this plant.</p>
-    <% end %>
+    <h2>Address: <%= link_to g.address, garden_path(g) %></h2>
+
+    <%= display_owner(g.user) %>
+
 <p>Plant name: <%= link_to g.plant.name, plant_path(g.plant) %> </p>
 <p>Description: <%= g.plant.description %> </p>
 <br>
     <% end %>
 
-    <div class="sidebar">
-        <i>Would you like to see GardenKeepers <%= link_to 'plant-celebrity showcase?', celebrity_path %></i>
-    </div>
+
 
