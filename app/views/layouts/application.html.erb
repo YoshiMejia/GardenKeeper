@@ -23,7 +23,7 @@
    <%= yield %>
  
    <footer class="branding">
-   <small>&copy; 2021 <strong>GardenKeeper</strong></small>
+   <small>&copy; 2021 <strong><%= link_to "GardenKeeper", root_path%></strong></small>
    <% if logged_in? %>
     <%= link_to current_user.name + ' ' + 'homepage', homepage_path unless current_user.nil? %>
 <%= link_to "logout", logout_url, method: :destroy %>
