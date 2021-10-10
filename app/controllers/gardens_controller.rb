@@ -1,4 +1,6 @@
 class GardensController < ApplicationController 
+    before_action :redirect_if_not_logged_in
+
     def new
         @garden = Garden.new(user_id: current_user.id)
         @garden.build_plant
