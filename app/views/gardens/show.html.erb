@@ -1,8 +1,8 @@
 <h1> garden show page </h1>
 <h3>Address: <%= @garden.address %></h3>
-
-<h5> You currently have a <%= link_to @garden.plant.name.singularize, plant_path(@garden.plant) %> plant in this garden! </h5>
-<h4> <%= @garden.plant.description %> </h4>
+<h5>  This garden holds a <%= link_to @garden.plant.name.singularize, plant_path(@garden.plant) %> plant! </h5>
+<h4> Description: <%= @garden.plant.description %> </h4>
+<%= display_owner(@garden.user) %>
 <br><br>
 <%= link_to "View all your gardens", user_gardens_path(current_user) %>
 <br><br>
