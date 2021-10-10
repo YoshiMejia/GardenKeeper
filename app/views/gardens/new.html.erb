@@ -1,4 +1,5 @@
-<h1> create garden </h1>
+<h1> Create a Garden! </h1>
+<%= display_flash %>
 
 <% if @garden.errors.any? %>
   <div id="error_explanation">
@@ -15,36 +16,33 @@
 
 <%= form_for @garden do |f| %>
     <%= f.hidden_field :user_id %>
-    <%= f.fields_for :plant do |p| %>
-        <p>What kind of plant is in your garden? </p>
-        
-       <div>
-            <%= p.label :name %>
-            <%= p.text_field :name %>
+      <%= f.fields_for :plant do |p| %>
+        <p>
+          What kind of plant is in your garden? 
+        </p>
+        <div>
+          <%= p.label :name %>
+          <%= p.text_field :name %>
         </div>
-
-<div>
-            <%= p.label :description %>
-            <%= p.text_area :description %>
-        <% end %>
-</div>
-
+        <div>
+          <%= p.label :description %>
+          <%= p.text_area :description %>
+        </div>
+      <% end %>
 <br>
-<p> Or, maybe this kind of plant is already in our system! </p>
-
+  <p> 
+    Or, maybe this kind of plant is already in our system! 
+  </p>
 <div> 
-<%= f.collection_select :plant_id, other_plants.sort_names, :id, :name, include_blank: 'Select existing plant' %>
+  <%= f.collection_select :plant_id, other_plants.sort_names, :id, :name, include_blank: 'Select existing plant' %>
 <br>
 </div>
-
-    <p>Where is your garden located?</p>
-   
+  <p>Where is your garden located?</p>
 <div>
         <%= f.label :address %>
-    <%= f.text_field :address %>
+        <%= f.text_field :address %>
 </div>
-
-    <%= f.submit "Create Garden" %>
-    <% end %>
+        <%= f.submit "Create Garden" %>
+        <% end %>
 
     

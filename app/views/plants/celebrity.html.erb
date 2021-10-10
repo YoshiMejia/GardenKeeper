@@ -1,10 +1,15 @@
 <div>
-<h1>GardenKeeper's Celebrity showcase!</h1>
-<h4> On this page you'll see our celebrity plants! <br> These are our most popular plants, in order from most to least popular according to how many garden's they're in.</h4>
+   <h1>GardenKeeper's Celebrity showcase!</h1>
+   <h4> On this page you'll see our celebrity plants!
+   <br> These are our most popular plants, in order from most to least popular according to how many garden's they're in.
+   </h4>
 </div>
+
+<%= display_flash %>
 
 <br>
 <% @celebrity.each do |plant| %>
-   <p> <%= link_to plant.name.capitalize, plant_path(plant) %> can be found in <%= pluralize(plant.users.count, "garden") %>!</p>
-
-    <% end %>
+   <p> 
+      <%= link_to plant.name.capitalize, plant_path(plant) %> can be found in <%= pluralize(plant.users.count, "garden") %>!
+   </p>
+<% end %>

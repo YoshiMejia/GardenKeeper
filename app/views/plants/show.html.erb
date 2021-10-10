@@ -1,18 +1,28 @@
 <div>
-<h1> <%= @plant.name %> page </h1>
+   <h1> 
+      <%= @plant.name %> Page 
+   </h1>
 </div>
+
+<%= display_flash %>
 
 
 <div>
-<h4> Description: <%= @plant.description %></h4>
+   <h4> 
+      Description: <%= @plant.description %>
+   </h4>
 </div>
 
 <div class="sidebar">
  <% @plant.users.each do |user| %>
     <% unless user == current_user %>
-       <p> <%= user.name %> owns this plant! </p>
-        <br>
-        <% end %>
-        <% end %>
-        <p> <%= link_to "View all plants", plants_path %></p>
+       <p>
+         <%= user.name %> owns this plant! 
+      </p>
+      <br>
+   <% end %>
+   <% end %>
+      <p> 
+        <%= link_to "View all plants", plants_path %>
+      </p>
 </div>
