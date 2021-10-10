@@ -1,8 +1,0 @@
-<h1>GardenKeeper's BusyBee showcase!</h1>
-<h3> On this page you will see all our users, in order from those who have the most plants to those with least plants</h3>
-<% @busy_bee.each do |garden| %>
-   
-   <p> <%= garden.user.name.capitalize %> has a <%= garden.plant.name.downcase %> plant!
-    </p>
-
-    <% end %>
