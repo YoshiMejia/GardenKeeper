@@ -1,9 +1,20 @@
-<h1> <%= @garden.address %>'s garden spotlight </h1>
+<h1> 
+    <%= @garden.address %>'s Garden Spotlight 
+</h1>
+<%= display_flash %>
 
-<h5>  This garden holds a <%= link_to @garden.plant.name.singularize, plant_path(@garden.plant) %> plant! </h5>
-<h4> Description: <%= @garden.plant.description %> </h4>
-<%= display_owner(@garden.user) %>
-<br><br>
-<%= link_to "View all your gardens", user_gardens_path(current_user) %>
-<br><br>
+<div align="right">
+    <h4> Check out our plant-celebrity lineup!</h4>
+    <%= link_to "GardenKeeper's Celebrity Showcase", celebrity_path %>
+</div>
+
+<div>
+    <h5>  This garden holds a <%= link_to @garden.plant.name.singularize, plant_path(@garden.plant) %> plant! </h5>
+    <h4> Description: <%= @garden.plant.description %> </h4>
+    <%= display_owner(@garden.user) %>
+</div>
+
+<br>
+    <%= link_to "View all your gardens", user_gardens_path(current_user) %>
+<br>
 <%= delete_button(@garden) %>

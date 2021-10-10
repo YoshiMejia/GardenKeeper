@@ -2,19 +2,21 @@
 <%= index_header %>
 <%= display_links %>
 <div align="right">
-<h4> Check out our plant-celebrity lineup!</h4>
-<%= link_to "GardenKeeper's Celebrity Showcase", celebrity_path %>
+    <h4> Check out our plant-celebrity lineup!</h4>
+    <%= link_to "GardenKeeper's Celebrity Showcase", celebrity_path %>
 </div>
+<%= display_flash %>
+
 
 <% @gardens.each do |g| %>
     <h2>Address: <%= link_to g.address, garden_path(g) %></h2>
 
     <%= display_owner(g.user) %>
 
-<p>Plant name: <%= link_to g.plant.name.capitalize, plant_path(g.plant) %> </p>
-<p>Description: <%= g.plant.description %> </p>
-<br>
-    <% end %>
+    <p>Plant name: <%= link_to g.plant.name.capitalize, plant_path(g.plant) %> </p>
+    <p>Description: <%= g.plant.description %> </p>
+    <br>
+<% end %>
 
 
 
