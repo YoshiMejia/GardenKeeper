@@ -1,24 +1,19 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# GardenKeeper
+
+This site lets gardeners and regular plant-lovers keep track of their plants and however many gardens they tend to.
 
 * Ruby version
+ruby '2.6.1'
 
-* System dependencies
+## Contributers
 
-* Configuration
+  * Yoshi Mejia
 
-* Database creation
+This site was created for my third project at Flatiron School's Online Software Engineering program.
 
-* Database initialization
+## License info
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There is a license folder in the file, this program was created with an MIT License 
+Copyright (c) 2021 slothabel
