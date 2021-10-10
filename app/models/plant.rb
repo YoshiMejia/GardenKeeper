@@ -7,4 +7,8 @@ class Plant < ApplicationRecord
         order(:name)
     end
 
+    def self.celebrity
+        joins(:gardens).group(:id).having('COUNT(plant_id)>=1').order('COUNT(user_id) desc')
+    end
+
 end
