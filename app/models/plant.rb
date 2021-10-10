@@ -2,7 +2,8 @@ class Plant < ApplicationRecord
     has_many :gardens
     has_many :users, through: :gardens
     validates :name, :description, presence: true
-
+    validates_uniqueness_of :name, :case_sensitive => false
+    
     def self.sort_names
         order(:name)
     end
