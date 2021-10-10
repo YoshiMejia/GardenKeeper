@@ -15,6 +15,26 @@ user_list = {
     :email => "bobby@gmail",
     :password_digest => "huhuhu"
   },
+  "finn" => {
+    :email => "finley@aol",
+    :password_digest => "different0"
+  },
+  "oil boy" => {
+    :email => "oily@aol",
+    :password_digest => "different0"
+  },
+  "charlotte" => {
+    :email => "charl@aol",
+    :password_digest => "different0"
+  },
+  "orlando" => {
+    :email => "orly@aol",
+    :password_digest => "different0"
+  },
+  "kyle" => {
+    :email => "kyle@aol",
+    :password_digest => "different0"
+  },
   "Hanna" => {
     :email => "hanbanan@aol",
     :password_digest => "different0"
@@ -36,6 +56,24 @@ end
 plant_list = {
   "Lavender" => {
     :description => "purple, used for medicine"
+  },
+  "thornbush" => {
+    :description => "prickly"
+  },
+  "Oranges" => {
+    :description => "orange tree"
+  },
+  "monstera" => {
+    :description => "plant"
+  },
+  "oak tree" => {
+    :description => "tree"
+  },
+  "lillies" => {
+    :description => "white flower"
+  },
+  "sunflower" => {
+    :description => "seeds"
   },
   "rose" => {
     :description => "pretty red flower"
@@ -59,19 +97,39 @@ end
 garden_list = {
     "123 Main St" => {
     :user_id => 1,
-    :plant_id => 1
+    :plant_id => 9
+},
+"345 coffee lane" => {
+    :user_id => 2,
+    :plant_id => 8
+},
+"99 pierce rd" => {
+    :user_id => 3,
+    :plant_id => 7
+},
+"743 isles" => {
+    :user_id => 4,
+    :plant_id => 6
+},
+"444 broadway" => {
+    :user_id => 5,
+    :plant_id => 5
 },
 "456 sobo ave" => {
-    :user_id => 2,
-    :plant_id => 2
+    :user_id => 6,
+    :plant_id => 4
 },
-"123123 south ave" => {
-    :user_id => 3,
+"212 home" => {
+    :user_id => 7,
     :plant_id => 3
 },
+"123123 south ave" => {
+    :user_id => 8,
+    :plant_id => 2
+},
 "990 Spring st" => {
-    :user_id => 4,
-    :plant_id => 4
+    :user_id => 9,
+    :plant_id => 1
 }}
 
 garden_list.each do |address, garden_hash|
