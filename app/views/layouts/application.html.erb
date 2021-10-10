@@ -25,7 +25,7 @@
    <footer class="branding">
    <small>&copy; 2021 <strong>GardenKeeper</strong></small>
    <% if logged_in? %>
-<%= link_to current_user.name + ' ' + 'homepage', homepage_path %>
+    <%= link_to current_user.name + ' ' + 'homepage', homepage_path unless current_user.nil? %>
 <%= link_to "logout", logout_url, method: :destroy %>
 <% end %>
    </footer>
