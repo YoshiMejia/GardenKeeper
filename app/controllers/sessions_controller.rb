@@ -16,9 +16,23 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
     end
+    
+    def omniauth
+        @user = User.google_user(auth)
+        session[:user_id] = @user.id    
+        redirect_to homepage_path
+    end
+    
 
     def destroy
         session.delete :user_id
         redirect_to root_path
+     end
+
+
+     private
+
+     def auth
+        request.env['omniauth.auth']
      end
 end

@@ -3,6 +3,8 @@
 <br>
 <%= link_to "signup", signup_path %>
 <br>
+<%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+<br>
 <% if logged_in? %>
 <%= link_to "homepage", homepage_path %>
 <% end %>

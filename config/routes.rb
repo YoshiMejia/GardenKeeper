@@ -13,12 +13,15 @@ Rails.application.routes.draw do
 
   get '/user/home', to: 'users#home', as: 'homepage'
   get '/gardens/busybee', to: 'gardens#busybee', as: 'busybee'
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
   resources :users, :gardens, :plants, only: [:new, :index, :create, :show]
 
   resources :users, only: [:show, :index] do
     resources :gardens
   end
+
+  
 
   # resources :users, only: [:show, :index] do
   #   resources :plants
