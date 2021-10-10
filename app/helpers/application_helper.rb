@@ -21,6 +21,13 @@ module ApplicationHelper
     @other_plants ||= Plant.all
     end
 
+    def index_header
+        if !!params[:user_id]
+            content_tag(:h1, "Hey, #{current_user.name}! Here are your gardens.")
+        else
+            content_tag(:h1, "All Gardens")
+        end
+    end
     # def no_data?
     #     @user = User.find_by(id: session[:user_id])
     #     !!@user.garden || !!@user.plants || !!@user.plots
