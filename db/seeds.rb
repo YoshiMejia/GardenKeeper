@@ -33,19 +33,18 @@ user_list.each do |name, user_hash|
   u.save
 end
 
-
 plant_list = {
   "Lavender" => {
-    :description => "purple, used for medicine",
+    :description => "purple, used for medicine"
   },
   "rose" => {
-    :description => "pretty red flower",
+    :description => "pretty red flower"
   },
   "Grass" => {
-    :description => "green stuff on lawn",
+    :description => "green stuff on lawn"
   },
   "thyme" => {
-    :description => "smelly",
+    :description => "smelly"
 }}
 
 plant_list.each do |name, plant_hash|
