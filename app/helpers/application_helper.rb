@@ -28,8 +28,10 @@ module ApplicationHelper
             content_tag(:h1, "All Gardens")
         end
     end
-    # def no_data?
-    #     @user = User.find_by(id: session[:user_id])
-    #     !!@user.garden || !!@user.plants || !!@user.plots
-    # end
+    
+    def display_owner(user)
+         if user != current_user 
+            content_tag(:p, "#{user.name} owns this plant.")
+        end 
+    end
 end
