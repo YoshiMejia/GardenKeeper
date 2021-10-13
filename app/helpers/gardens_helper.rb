@@ -30,4 +30,10 @@ module GardensHelper
             content_tag(:h1, "All Gardens")
         end
     end
+
+    def last_garden
+        recent_g = current_user.gardens.last
+        recent_g.created_at
+    end
+
 end
