@@ -8,6 +8,9 @@ class UsersController < ApplicationController
         redirect_to login_path if !current_user
     end
 
+    def about
+    end
+
     def create
         @user = User.new(user_params)
         #if youre able to save the user, login and render homepage
