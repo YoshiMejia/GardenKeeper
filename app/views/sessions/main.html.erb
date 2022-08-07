@@ -1,12 +1,23 @@
-<h1> Welcome to GardenKeeper!</h1>
-<h3>Please select an option to continue. </h3>
+<div>
+    <h1> Welcome to GardenKeeper!</h1>
+</div>
+<div>
+    <h3>Please select an option to continue. </h3>
+</div>
 
-<%= link_to "login", login_path %>
-<br>
-<%= link_to "signup", signup_path %>
-<br>
-<%= button_to "Log in with Google", '/auth/google_oauth2'  %>
-<br>
-<% if logged_in? %>
-    <%= link_to "homepage", homepage_path %>
-<% end %>
+<div class='login-links'>
+    <div class='login-btn'>
+        <%= link_to "login", login_path %>
+    </div>
+    <div class='signup-btn'>
+        <%= link_to "signup", signup_path %>
+    </div>
+    <div class='omni-btn'>
+        <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+    </div>
+    <div class='home-btn'>
+        <% if logged_in? %>
+            <%= link_to "homepage", homepage_path %>
+        <% end %>
+    </div>
+</div>
