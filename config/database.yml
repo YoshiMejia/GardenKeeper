@@ -14,8 +14,8 @@ development:
   encoding: unicode
   database: garden_development
   pool: 5
-  username: garden
-  password:
+  username: postgres
+  password: password
   min_messages: WARNING
 
 # Warning: The database defined as "test" will be erased and
