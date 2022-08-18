@@ -15,6 +15,10 @@ ruby '2.6.1'
 * GardenKeeper shows you other users plants and showcases the most common plant on the app
 * You can sign up using your email or by using your Google account
 
+## Dependencies
+* [Google OmniAuth](https://github.com/zquestz/omniauth-google-oauth2)
+* [BCrypt](https://github.com/viniciussanchez/bcrypt)
+
 ## Run this project locally
 * Clone repo locally
 * run ```bundle install```
