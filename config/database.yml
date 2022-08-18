@@ -15,7 +15,7 @@ development:
   database: garden_development
   pool: 5
   username: postgres
-  password: password
+  password: 
   min_messages: WARNING
 
 # Warning: The database defined as "test" will be erased and
